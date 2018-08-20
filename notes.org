@@ -1,0 +1,26 @@
+* Coding Challenge
+** Rules Engine
+*** Rules
+**** IPRule
+*** general approach
+**** Domain Model
+***** case classes
+****** Account
+****** User
+****** Ticket
+***** value objects
+****** spamReport
+******* account-id
+******* List[String] violations
+*** JSON Protocol
+**** parse to JSON
+****** report failure
+*****  serialize to Model(s)
+****** report failure
+*****  Validate Model(s)
+****** report failure 
+*** readRec andThen parseTojson andThen toModel 
+** Account Rules --- applicative to accum erros/violations ?? --
+*** IP: (predicateFunction: List[T] => t:T ) => ips: List[String] => ip: String => Boolean
+*** UserLimit: (f_predicate: Int => Int) =>  limit: Int => numberOfAccounts: Int => Boolean
+*** SpamyTickets: (f_predicate: List[T] => t:T ) => suspiciousURLs: List[String] => url: String => Boolean
